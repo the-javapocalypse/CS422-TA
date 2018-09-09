@@ -1,0 +1,20 @@
+<div class="mainApp">
+  <div class="row" style="height: 10vh;"></div>
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4 text-center mainAppChild">
+      <mat-card style="position: relative; top: 50%;">
+        <h2>HCI Activity 1</h2>
+        <hr>
+        <br>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Roll Number" [(ngModel)]="rollNo">
+          <mat-hint>Example: k152123</mat-hint>
+        </mat-form-field>
+        &nbsp; &nbsp;<button mat-stroked-button color="primary" (click)="startSess()" >Start</button>
+        <br><br>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,88 @@
+<div style="height: 100vh; background-image: url('../../../../assets/bg1.jpg'); background-size: 100% 100%;">
+
+
+  <div class="container" [class.hide]="!startAttendace" style="position: relative; top: 15%;">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <mat-card>
+          <div class="row">
+            <div class="col-md-6">
+              <h2 class="text-center">Instructions</h2>
+              <hr>
+              <p class="text-justify">The purpose of this activity is to evaluate the accuracy and efficiency of taking
+                attendance by changing
+                the defaults. You might want to look the image at right (or below if you are using via smartphone), so
+                that when conducting
+                attendance the interface seems familiar and eliminated the biasness caused by the first time usage.
+                Before
+                starting, you need to select the default option for attendance, i.e,
+                if you select 'Present', all students will be present by default and vice versa.</p>
+              <p><b>Note:</b> Refreshing at any point will reset your session.</p>
+              <mat-form-field>
+                <mat-select placeholder="Default Option" [(ngModel)]="defaultOption">
+                  <mat-option *ngFor="let defualt of defualts" [value]="defualt">
+                    {{defualt}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <br><br>
+              <button mat-stroked-button color="primary" (click)="startTimer()" class="btn-block">Start</button>
+              <!--<div class="btn btn-success" (click)="startTimer()"> start</div>-->
+            </div>
+            <div class="col-md-6">
+              <img src="../../../../assets/edit.png" class="img-fluid">
+            </div>
+          </div>
+          <br>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid" [class.hide]="startAttendace"
+       style="background-image: url('../../../../assets/bg1.jpg');">
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <mat-card>
+            <h2 class="text-center">Attendance Portal</h2>
+            <br><br>
+            <table class="table table-bordered">
+              <thead>
+              <tr>
+                <th>Roll No.</th>
+                <th>Name</th>
+                <th>Attendance</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let record of numbers">
+                <td>{{data[record].RollNo}}</td>
+                <td>{{data[record].Name}}</td>
+                <td>
+                  <div class="form-group">
+                    <select class="form-control" id="sel1" [(ngModel)]="studentSelected[record]">
+                      <option>Present</option>
+                      <option>Absent</option>
+                    </select>
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+            <br>
+            <!--<div class="btn btn-default" (click)="stopTimer()"> Stop</div>-->
+            <button mat-stroked-button color="primary" (click)="stopTimer()" class="btn-block">Finish</button>
+            <br><br>
+          </mat-card>
+          <br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
