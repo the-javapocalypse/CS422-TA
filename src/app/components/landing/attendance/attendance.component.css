@@ -1,6 +1,12 @@
-.hide{
+.hide {
   display: none;
 }
-.show{
+
+.show {
   display: block;
+}
+
+.phone {
+  background-image: url('../../../../assets/bg1.jpg');
+  background-size: 100% 100%;
 }

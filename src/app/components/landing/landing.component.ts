@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {StudentService} from '../../student.service';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-landing',
@@ -10,7 +11,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 })
 export class LandingComponent implements OnInit {
 
-  constructor(private _studentService: StudentService, private router: Router, private httpClient: HttpClient) {
+  constructor(private _studentService: StudentService, private router: Router, private httpClient: HttpClient, private titleService: Title) {
     // console.log('constructor');
     // // Initialize Params Object
     // let Params = new HttpParams();
@@ -25,11 +26,19 @@ export class LandingComponent implements OnInit {
     //   console.log(data);
     // });
 
+
+    // httpClient.post('http://javapocalypse.tdevs.org/api.php', {'email': 'aaa', 'password': 'aaa'})
+    //   .subscribe(data =>  {
+    //     console.log(' ------------ ' + data);
+    //   });
+
+
   }
 
   public rollNo = '';
 
   ngOnInit() {
+    this.titleService.setTitle('HCI Activity');
     console.log('On Init');
     console.log(this._studentService.data);
     this._studentService.data.id = this.rollNo;

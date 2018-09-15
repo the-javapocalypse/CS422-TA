@@ -15,7 +15,9 @@ export class StudentService {
     'endTime': 0,
     'selection': [],
     'correct': 0,
-    'wrong': 0
+    'wrong': 0,
+    'timeStamps': [],
+    'avgTime': 0
   };
 
   records = [
