@@ -10,11 +10,13 @@
           <br><br>
           <p>
             You got {{studentData.correct}} correct and {{studentData.wrong}} wrong results, which means you were {{ studentData.correct/30 | percent }} accurate.
-            You took {{ (studentData.endTime - studentData.startTime)/1000  | number:'2.1-2'}} seconds to complete the attendance procedure. Following is the real attendance
+            You took {{ (studentData.endTime - studentData.startTime)/1000  | number:'2.1-2'}} seconds to complete the attendance procedure. Average time to perform
+            an action, i.e to mark a student present or absent was {{avgTime | number:'2.1-2'}} seconds. Following is the real attendance
             vs the attendance you took.
           </p>
+          <button mat-stroked-button color="primary" (click)="postResults()" class="btn-block">Submit</button>
           <br><br>
-          <table class="table table-bordered">
+          <table class="table table-bordered table-responsive-sm">
             <thead>
             <tr>
               <th>Roll No.</th>
@@ -34,7 +36,6 @@
           </table>
           <br>
           <!--<div class="btn btn-default" (click)="stopTimer()"> Stop</div>-->
-          <button mat-stroked-button color="primary" (click)="stopTimer()" class="btn-block">Finish</button>
           <br><br>
         </mat-card>
         <br><br>

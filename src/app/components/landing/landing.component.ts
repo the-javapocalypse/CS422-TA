@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {StudentService} from '../../student.service';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 
 @Component({
   selector: 'app-landing',
@@ -24,6 +24,13 @@ export class LandingComponent implements OnInit {
     //   // show data in console
     //   console.log(data);
     // });
+
+
+    // httpClient.post('http://javapocalypse.tdevs.org/api.php', {'email': 'aaa', 'password': 'aaa'})
+    //   .subscribe(data =>  {
+    //     console.log(' ------------ ' + data);
+    //   });
+
 
   }
 

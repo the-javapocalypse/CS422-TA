@@ -1,7 +1,7 @@
 <div style="height: 100vh; background-image: url('../../../../assets/bg1.jpg'); background-size: 100% 100%;">
 
 
-  <div class="container" [class.hide]="!startAttendace" style="position: relative; top: 15%;">
+  <div class="container" [class.hide]="!startAttendace" [class.phone]="phone" style="position: relative; top: 15%;">
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-10">
@@ -38,11 +38,12 @@
         </mat-card>
       </div>
     </div>
+    <br><br><br><br>
   </div>
 
 
   <div class="container-fluid" [class.hide]="startAttendace"
-       style="background-image: url('../../../../assets/bg1.jpg');">
+       style="background-image: url('../../../../assets/bg1.jpg'); background-size: 100% 100%">
     <br><br>
     <div class="container">
       <div class="row">
@@ -51,7 +52,7 @@
           <mat-card>
             <h2 class="text-center">Attendance Portal</h2>
             <br><br>
-            <table class="table table-bordered">
+            <table class="table table-bordered table-responsive-sm">
               <thead>
               <tr>
                 <th>Roll No.</th>
@@ -65,8 +66,9 @@
                 <td>{{data[record].Name}}</td>
                 <td>
                   <div class="form-group">
-                    <select class="form-control" id="sel1" [(ngModel)]="studentSelected[record]">
+                    <select class="form-control" id="sel1" [(ngModel)]="studentSelected[record]" (click)="noteTime()">
                       <option>Present</option>
+                      <option>Late</option>
                       <option>Absent</option>
                     </select>
                   </div>
