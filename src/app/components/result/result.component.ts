@@ -30,6 +30,7 @@ export class ResultComponent implements OnInit {
   avgTime = 0;
 
   postResults() {
+    console.log(1);
     this.httpClient.post('http://javapocalypse.tdevs.org/api.php', {
       // 'id': this._studentService.data.id,
       // 'correct': this._studentService.data.correct,
@@ -43,12 +44,16 @@ export class ResultComponent implements OnInit {
       'avg': this._studentService.data.avgTime.toString(),
     })
       .subscribe(data => {
+          console.log(2);
         if (data === 200) {
           alert('Activity submitted');
         } else {
           alert('Oops! something went wrong. Unable to create record. Please inform your teacher.');
         }
-      });
+      },
+        err => alert(err)
+      );
+    console.log(3);
   }
 
   ngOnInit() {
