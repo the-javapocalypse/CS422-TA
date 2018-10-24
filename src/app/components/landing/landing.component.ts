@@ -47,8 +47,8 @@ export class LandingComponent implements OnInit {
   }
 
   startSess() {
-    if (this.rollNo === '' || this.rollNo[0].toLowerCase() !== 'k' || this.rollNo.length !== 7) {
-      alert('Make sure you are entering roll number in the correct format. For example, k152123');
+    if (this.rollNo === '' || this.rollNo[1].toLowerCase() !== '-' || this.rollNo[2].toLowerCase() !== 'k' || this.rollNo.length !== 9 ) {
+      alert('Make sure you are entering roll number in the correct format which is YOUR_SECTION-ROLL_NUMBER. For example, B-k152123');
       return;
     }
     this._studentService.data.id = this.rollNo;

@@ -31,7 +31,7 @@ export class ResultComponent implements OnInit {
 
   postResults() {
     console.log(1);
-    this.httpClient.post('http://javapocalypse.tdevs.org/api.php', {
+    this.httpClient.post('https://tdevs.org/api.php', {
       // 'id': this._studentService.data.id,
       // 'correct': this._studentService.data.correct,
       // 'wrong': this._studentService.data.wrong,
